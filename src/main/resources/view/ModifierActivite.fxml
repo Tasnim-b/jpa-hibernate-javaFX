@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.geometry.HPos?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controller.ModifierActiviteController" style="-fx-background-color: #f1e9e2;" spacing="10" alignment="CENTER">
+    <Label text="Modifier Activité" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+
+    <GridPane vgap="10" hgap="10" alignment="CENTER">
+        <!-- Sélectionner une Activité -->
+        <Label text="Sélectionner l'Activité:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <ComboBox fx:id="activiteComboBox" GridPane.columnIndex="1" GridPane.rowIndex="0" GridPane.halignment="CENTER" prefWidth="200"/>
+
+        <!-- Nom de l'activité -->
+        <Label text="Nom de l'activité:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="nomActiviteField" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="CENTER" prefWidth="200"/>
+
+        <!-- Prix de l'activité -->
+        <Label text="Prix:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <TextField fx:id="prixActiviteField" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.halignment="CENTER" prefWidth="200"/>
+
+        <!-- Description -->
+        <Label text="Description:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <TextField fx:id="descriptionField" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.halignment="CENTER" prefWidth="200"/>
+
+        <!-- Choisir les voyages -->
+        <Label text="Voyages associés:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <ComboBox fx:id="voyageComboBox" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.halignment="CENTER" prefWidth="200"/>
+
+    </GridPane>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Modifier" fx:id="modifierButton"  style="-fx-background-color: #b49786; -fx-text-fill: white;" onAction="#handleModifierActivite"/>
+        <Button text="Annuler" fx:id="annulerButton" onAction="#handleAnnuler"/>
+    </HBox>
+</VBox>

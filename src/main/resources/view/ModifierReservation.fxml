@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.HBox?>
+
+<GridPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controller.ModifierReservationController" hgap="15" vgap="15" alignment="CENTER">
+    <!-- Titre -->
+    <Label text="Modifier une réservation"
+           style="-fx-font-size: 18px; -fx-font-weight: bold;"
+           GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="2"
+           GridPane.halignment="CENTER"/>
+
+    <!-- Sélectionner un client -->
+    <Label text="Sélectionner un client:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <ComboBox fx:id="clientComboBox" GridPane.rowIndex="1" GridPane.columnIndex="1" prefWidth="150"/>
+
+    <!-- Sélectionner un voyage -->
+    <Label text="Sélectionner un voyage:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+    <ComboBox fx:id="voyageComboBox" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+    <!-- Sélectionner un groupe -->
+    <Label text="Sélectionner un groupe:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+    <ComboBox fx:id="groupeComboBox" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+    <!-- Montant total -->
+    <Label text="Montant total:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+    <TextField fx:id="montantTotalTextField" GridPane.rowIndex="4" GridPane.columnIndex="1" editable="false"/>
+
+    <!-- Date de début -->
+    <Label text="Date de début:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+    <DatePicker fx:id="dateDebutDatePicker" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+    <!-- Date de fin -->
+    <Label text="Date de fin:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+    <DatePicker fx:id="dateFinDatePicker" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+    <!-- Boutons -->
+    <HBox spacing="15" alignment="CENTER" GridPane.rowIndex="7" GridPane.columnIndex="1">
+        <Button text="Modifier" onAction="#handleModifyReservation" style="-fx-background-color: #b49786; -fx-text-fill: white;"/>
+        <Button text="Supprimer" fx:id="deleteButton" />
+    </HBox>
+</GridPane>

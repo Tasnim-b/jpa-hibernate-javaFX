@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+
+<GridPane xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="org.controller.ReservationController"
+          style="-fx-background-color: #f1e9e2;"
+          hgap="10" vgap="10" alignment="CENTER">
+    <Label text="Ajouter une réservation"
+           style="-fx-font-size: 18px; -fx-font-weight: bold;"
+           GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="2"
+           GridPane.halignment="CENTER"/>
+
+    <!-- Nom Reservation -->
+    <Label text="Nom reservation:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <TextField fx:id="NomReservatiolnField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+    <!-- Date de début -->
+    <Label text="Date de début:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+    <DatePicker fx:id="dateDebutPicker" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+    <!-- Date de fin -->
+    <Label text="Date de fin:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+    <DatePicker fx:id="dateFinPicker" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+    <!-- Groupe de voyageurs -->
+    <Label text="Groupe de voyageurs:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+    <ComboBox fx:id="groupeComboBox" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+    <!-- Voyage -->
+    <Label text="Voyage:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+    <ComboBox fx:id="voyageComboBox" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+    <!-- Boutons -->
+    <HBox spacing="10" alignment="CENTER" GridPane.rowIndex="6" GridPane.columnSpan="2">
+        <Button text="Ajouter" fx:id="submitButton" onAction="#handleAddReservation" style="-fx-background-color: #b49786; -fx-text-fill: white;"/>
+        <Button text="Annuler" fx:id="cancelButton" onAction="#handleCancel" />
+    </HBox>
+
+</GridPane>

@@ -1,17 +1,53 @@
 package org.example;
-import lombok.ToString;
-import org.hibernate.Hibernate;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
 
-import org.example.Client;
-import org.example.Hotel;
+import javafx.application.Application;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
 
-import java.util.List;
+import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
 
-public class Main {
+
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import javafx.scene.image.Image;
+
+
+import org.dao.GenericDAO;
+
+import org.model.Client;
+
+
+import java.io.IOException;
+
+import javafx.fxml.FXMLLoader;
+
+import static javafx.application.Application.launch;
+
+
+public class Main extends Application {
+    //@Override
+    /*public void start(Stage primaryStage) throws IOException {
+        // Charger le fichier FXML
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/views/ajouterClient.fxml"));
+        if (fxmlLoader.getLocation() == null) {
+            System.out.println("Fichier FXML introuvable");
+        }
+        Scene scene = new Scene(fxmlLoader.load(), 400, 400); // Dimensions de la fenêtre
+        primaryStage.setTitle("Ajout d'un Client");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }*/
     public static void main(String[] args) {
+        Application.launch(args);
+
+
+
+
+
+
         //en utilisant hibernate
 /*        // Créer une session factory avec la configuration Hibernate
         SessionFactory factory = new Configuration()
@@ -51,11 +87,11 @@ public class Main {
 
         // Ajouter un client
        /* Client newClient = new Client();
-        newClient.setNom("salma");
-        newClient.setPrenom("marzouki");
-        newClient.setEmail("salma@gmail.com");
-        newClient.setTelephone("5323666");
-        newClient.setAdresse("123 Main Street");
+        newClient.setNom("tasnouma ");
+        newClient.setPrenom("ben mabrouk");
+        newClient.setEmail("tasnim@gmail.com");
+        newClient.setTelephone("26089341");
+        newClient.setAdresse("22 zouhour");
         clientDAO.add(newClient);*/
 
         // Récupérer un client par ID
@@ -121,11 +157,43 @@ public class Main {
 
 
 
-
-
-
-
     }
+
+   public void start(Stage primaryStage) throws IOException {
+       FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MainMenuView.fxml"));
+      // GridPane root = loader.load();
+      BorderPane root = loader.load();
+       //VBox root = loader.load();
+
+       Image logo = new Image(getClass().getResourceAsStream("/image/logo2.png"));
+       primaryStage.getIcons().add(logo);
+
+       // Créer un ImageView pour afficher le logo dans l'interface
+       Image logo1 = new Image(getClass().getResourceAsStream("/image/img2.png"));
+       ImageView logoView = new ImageView(logo1);
+       logoView.setFitHeight(500);
+       logoView.setFitWidth(250);   // Ajustez la taille si nécessaire
+       logoView.setPreserveRatio(true);
+
+       // Créer un label de bienvenue
+       Label welcomeLabel = new Label("Bienvenue à notre Agence de Voyage ");
+       welcomeLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;");
+
+       // Créer un VBox contenant l'image et le message
+       VBox welcomeBox = new VBox(10, logoView, welcomeLabel);
+       welcomeBox.setAlignment(Pos.CENTER);
+       welcomeBox.setStyle("-fx-padding: 10px;"); // Ajoute un peu d'espacement autour
+
+       // Ajouter le VBox contenant l'image et le message dans la partie CENTER du BorderPane
+       root.setCenter(welcomeBox);
+
+       Scene scene = new Scene(root, 800, 600);
+      // scene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
+       primaryStage.setTitle("Gestion Agence de Voyage");
+       primaryStage.setScene(scene);
+       primaryStage.show();
+   }
+
 
 
 

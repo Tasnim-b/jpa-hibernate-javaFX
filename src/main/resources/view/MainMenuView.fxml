@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <?import javafx.scene.control.*?>
+        <?import javafx.scene.layout.BorderPane?>
+        <?import javafx.scene.layout.StackPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"  fx:id="borderPane" fx:controller="org.controller.MainMenuController" style="-fx-background-color: #f1e9e2;">
+<top>
+    <MenuBar>
+        <menus>
+            <Menu text="Clients">
+                <items>
+                    <MenuItem text="Ajouter Client" fx:id="addClient" onAction="#handleAddClient"/>
+                    <MenuItem text="Modifier Client" fx:id="modifyClient" onAction="#handleModifyClient"/>
+                </items>
+            </Menu>
+            <Menu text="Réservations">
+                <items>
+                    <MenuItem text="Ajouter Réservation" fx:id="addReservation" onAction="#handleAddReservation"/>
+                    <MenuItem text="Modifier Réservation" fx:id="modifyReservation" onAction="#handleModifyReservation"/>
+                </items>
+            </Menu>
+            <Menu text="Voyages &amp; Destinations">
+                <items>
+                    <MenuItem text="Ajouter Voyage" fx:id="addVoyage" onAction="#handleAddVoyage"/>
+                    <MenuItem text="Modifier Voyage" fx:id="modifyVoyage" onAction="#handleModifierVoyage"/>
+                </items>
+            </Menu>
+            <Menu text="Activités">
+                <items>
+                    <MenuItem text="Ajouter Activité" fx:id="addActivite" onAction="#handleAjouterActivite"/>
+                    <MenuItem text="Modifier Activité" fx:id="modifyActivite" onAction="#handleModifierActivite"/>
+                </items>
+            </Menu>
+
+        </menus>
+    </MenuBar>
+</top>
+
+<!-- Zone centrale pour afficher le contenu dynamique -->
+
+    <center>
+        <!-- Zone centrale vide, le contenu sera chargé via borderPane.setCenter(content) -->
+    </center>
+</BorderPane>
