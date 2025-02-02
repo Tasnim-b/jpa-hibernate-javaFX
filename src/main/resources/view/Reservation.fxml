@@ -18,7 +18,7 @@
 
     <!-- Nom Reservation -->
     <Label text="Nom reservation:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
-    <TextField fx:id="NomReservatiolnField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+    <TextField fx:id="NomReservationField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
 
     <!-- Date de début -->
     <Label text="Date de début:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
